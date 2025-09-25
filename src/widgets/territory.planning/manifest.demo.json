@@ -1,0 +1,7 @@
+{
+    "discoveryUrl": "https://demomyapp.accessacloud.com/discovery",
+    "settings": {
+        "apiUrl": "https://demomyapp.accessacloud.com/api/v1",
+        "remoteEntry": ""
+    }
+}

@@ -1,0 +1,16 @@
+{
+  "id": "territory.planning",
+  "version": "0.1.0",
+  "name": "planning",
+  "applicationId": "",
+  "applicationName": "",
+  "description": "",
+  "disableInject": true,
+  "minWidth": 1,
+  "minHeight": 400,
+  "discoveryUrl": "http://localhost/mydiscovery",
+  "settings": {
+    "apiUrl": "http://localhost/myapp/api/v1",
+    "remoteEntry": ""
+  }
+}

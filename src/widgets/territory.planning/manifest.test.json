@@ -1,0 +1,7 @@
+{
+    "discoveryUrl": "https://preprodmyapp.accessacloud.com/discovery",
+    "settings": {
+        "apiUrl": "https://preprodmyapp.accessacloud.com/api/v1",
+        "remoteEntry": ""
+    }
+}

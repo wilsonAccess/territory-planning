@@ -1,0 +1,7 @@
+{
+    "discoveryUrl": "https://stagingmyapp.accessacloud.com/discovery",
+    "settings": {
+        "apiUrl": "https://stagingmyapp.accessacloud.com/api/v1",
+        "remoteEntry": ""
+    }
+}
