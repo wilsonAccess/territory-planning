@@ -4,6 +4,10 @@ import { AppHeader } from '@tag/tag-components-react-v4';
 import { DeleteFilled, SearchFilled } from '@tag/tag-icons';
 import { SelectedMenuItem } from '@tag/tag-components-react-v4/dist/components/workspace/shared/menu/types';
 import { Root } from 'react-dom/client';
+import MainLayout from './layouts/MainLayout';
+import Dashboard from './pages/Dashboard';
+import AdminDashboard from './pages/AdminDashboard';
+import { Route, Routes } from 'react-router-dom';
 
 type AppProps = {
     root: Root;
@@ -38,6 +42,15 @@ const App = (props: AppProps) => {
                     }
                 }}
             ></AppHeader>
+            <MainLayout>
+                <Routes>
+                    {/* Homepage Dashboard */}
+                    <Route path="/" element={<Dashboard />} />
+
+                    {/* Admin Dashboard */}
+                    <Route path="/admin" element={<AdminDashboard />} />
+                </Routes>
+            </MainLayout>
         </>
     );
 };

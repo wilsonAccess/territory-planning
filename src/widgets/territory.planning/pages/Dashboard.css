@@ -1,0 +1,16 @@
+.dashboard-header-left-title {
+  font-size: 24px;
+  font-weight: bold;
+}
+
+.dashboard-header-left-item-container {
+  margin-top: 8px;
+}
+
+.dashboard-erp-grid {
+  margin-top: 24px;
+}
+
+.dashboard-erp-grid-card{
+  padding: 16px;
+}

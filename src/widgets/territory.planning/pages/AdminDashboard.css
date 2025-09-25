@@ -1,0 +1,158 @@
+/* admindashboard.css */
+
+/* Reset/Body */
+body, html, #root {
+  margin: 0;
+  padding: 0;
+  font-family: Arial, sans-serif;
+  background-color: #f3f4f6;
+  color: #111827;
+  min-height: 100vh;
+}
+
+/* Sidebar */
+.sidebar {
+  background-color: #1f2937;
+  color: white;
+  width: 250px;
+  padding: 16px;
+  display: flex;
+  flex-direction: column;
+}
+
+.sidebar-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 32px;
+}
+
+.sidebar-nav ul {
+  list-style: none;
+  padding: 0;
+}
+
+.sidebar-nav li {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.sidebar-nav li:hover,
+.sidebar-nav li.active {
+  background-color: #374151;
+}
+
+/* Header */
+.dashboard-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 32px;
+}
+
+.dashboard-header h1 {
+  font-size: 28px;
+  font-weight: bold;
+}
+
+.header-icons {
+  display: flex;
+  gap: 16px;
+  align-items: center;
+}
+
+/* Overview Cards */
+.overview-cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 24px;
+  margin-bottom: 32px;
+}
+
+.card {
+  background: white;
+  padding: 24px;
+  border-radius: 12px;
+  border: 1px solid #e5e7eb;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+}
+
+.card-title {
+  font-size: 14px;
+  color: #6b7280;
+  margin-bottom: 8px;
+}
+
+.card-value {
+  font-size: 24px;
+  font-weight: 600;
+  margin-bottom: 4px;
+}
+
+.card-subtitle {
+  font-size: 12px;
+  color: #9ca3af;
+}
+
+/* Table */
+.table-container {
+  overflow-x: auto;
+}
+
+.table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-bottom: 32px;
+}
+
+.table th, .table td {
+  text-align: left;
+  padding: 12px 16px;
+  font-size: 14px;
+}
+
+.table th {
+  background-color: #f9fafb;
+  color: #6b7280;
+  text-transform: uppercase;
+  font-weight: 600;
+}
+
+.table tr:nth-child(even) {
+  background-color: #f9fafb;
+}
+
+.badge {
+  display: inline-block;
+  padding: 2px 8px;
+  border-radius: 12px;
+  font-size: 12px;
+  font-weight: 600;
+}
+
+/* Colors for badges */
+.badge-yellow { background-color: #fef3c7; color: #b45309; }
+.badge-red { color: #b91c1c; }
+.badge-green { background-color: #d1fae5; color: #065f46; }
+.badge-blue { background-color: #dbeafe; color: #1e40af; }
+
+/* Key Insights */
+.key-insights {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.insight {
+  padding: 16px;
+  border-radius: 8px;
+}
+
+.insight.alert { background-color: #fee2e2; color: #b91c1c; }
+.insight.info { background-color: #dbeafe; color: #1e40af; }
+.insight.success { background-color: #d1fae5; color: #065f46; }

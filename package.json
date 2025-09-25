@@ -26,7 +26,9 @@
     "@workspace/react-testing-library-utils": "4.2.1",
     "@workspace/utils-react": "4.2.1",
     "react": "18.3.1",
-    "react-dom": "18.3.1"
+    "react-dom": "18.3.1",
+    "react-router-dom": "^7.9.2",
+    "recharts": "^3.2.1"
   },
   "devDependencies": {
     "@testing-library/jest-dom": "6.8.0",

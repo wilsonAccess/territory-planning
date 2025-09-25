@@ -6,7 +6,7 @@
   "applicationName": "",
   "description": "",
   "disableInject": true,
-  "minWidth": 1,
+  "minWidth": 800,
   "minHeight": 400,
   "discoveryUrl": "http://localhost/mydiscovery",
   "settings": {

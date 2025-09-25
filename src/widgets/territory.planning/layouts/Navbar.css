@@ -1,0 +1,100 @@
+/* Top navbar */
+.navbar {
+  position: sticky;
+  top: 0;
+  left: 0;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #6366F1; /* purple */
+  color: white;
+  padding: 12px 20px;
+  font-family: Arial, sans-serif;
+  z-index: 1000;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.15);
+}
+
+.navbar-left {
+  display: flex;
+  flex-direction: column;
+}
+
+.navbar-title {
+  margin: 0;
+  font-size: 18px;
+  font-weight: bold;
+}
+
+.navbar-subtitle {
+  margin: 2px 0 0;
+  font-size: 13px;
+  opacity: 0.9;
+}
+
+.navbar-right {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.nav-btn {
+  background: white;
+  color: #6c63ff;
+  border: none;
+  border-radius: 6px;
+  padding: 6px 12px;
+  font-size: 13px;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+.nav-btn:hover {
+  background: #f1f1f1;
+}
+
+.last-updated {
+  font-size: 12px;
+  opacity: 0.85;
+}
+
+/* Second-level tabs */
+.nav-tabs {
+  margin-top: 0px; /* push below fixed navbar */
+  display: flex;
+  gap: 20px;
+  background: #f9f9f9;
+  padding: 10px 20px;
+  border-bottom: 1px solid #ddd;
+  position: sticky;
+  top: 0px; /* sticks under navbar */
+  z-index: 900;
+  width: 100%;       /* fit screen */
+  overflow-x: auto;  /* allow scrolling if tabs exceed width */
+  box-sizing: border-box; /* include padding in width */
+}
+
+.tab {
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-size: 14px;
+  color: #555;
+  padding: 6px 0;
+  transition: 0.2s;
+}
+
+.tab:hover {
+  color: #6c63ff;
+}
+
+.tab.active {
+  color: #6c63ff;
+  font-weight: bold;
+  border-bottom: 2px solid #6c63ff;
+}
+
+/* Tab content */
+.tab-content {
+  padding: 20px;
+}

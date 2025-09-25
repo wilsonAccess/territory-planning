@@ -3,6 +3,7 @@ import { WidgetLoadProps } from '@workspace/utils';
 import { WidgetContainer } from '@workspace/utils-react';
 import React, { lazy, Suspense } from 'react';
 import { createRoot } from 'react-dom/client';
+import { BrowserRouter } from 'react-router-dom'; // ✅ Import BrowserRouter
 
 import { WidgetSettings } from './WidgetSettings';
 
@@ -12,11 +13,13 @@ export function load(props: WidgetLoadProps<WidgetSettings>) {
     const root = createRoot(props.widget.element);
     root.render(
         <React.StrictMode>
-            <WidgetContainer {...props}>
-                <Suspense fallback={<Spinner>Loading</Spinner>}>
-                    <App root={root} />
-                </Suspense>
-            </WidgetContainer>
+            <BrowserRouter>
+                <WidgetContainer {...props}>
+                    <Suspense fallback={<Spinner>Loading</Spinner>}>
+                        <App root={root} />
+                    </Suspense>
+                </WidgetContainer>
+            </BrowserRouter>
         </React.StrictMode>,
     );
 }
