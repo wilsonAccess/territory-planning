@@ -1,0 +1,46 @@
+{
+  "name": "territory.planning",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "start": "workspace-build-tool serve",
+    "build": "workspace-build-tool build",
+    "test": "workspace-build-tool test",
+    "lint": "workspace-build-tool lint"
+  },
+  "browserslist": [
+    ">0.2%",
+    "ie 11",
+    "not dead",
+    "not op_mini all"
+  ],
+  "eslintConfig": {
+    "extends": [
+      "@workspace",
+      "@workspace/eslint-config/jest"
+    ]
+  },
+  "dependencies": {
+    "@tag/tag-components-react-v4": "4.39.0",
+    "@tag/tag-icons": "4.39.0",
+    "@workspace/react-testing-library-utils": "4.2.1",
+    "@workspace/utils-react": "4.2.1",
+    "react": "18.3.1",
+    "react-dom": "18.3.1"
+  },
+  "devDependencies": {
+    "@testing-library/jest-dom": "6.8.0",
+    "@testing-library/react": "16.3.0",
+    "@testing-library/user-event": "14.6.1",
+    "@types/jest": "30.0.0",
+    "@types/react": "18.3.24",
+    "@types/react-dom": "18.3.7",
+    "@workspace/build-tool": "4.2.1",
+    "@workspace/harness": "4.2.1",
+    "@workspace/utils": "4.2.1",
+    "eslint-config-prettier": "10.1.8",
+    "eslint-plugin-prettier": "5.5.4",
+    "prettier": "3.6.2",
+    "typescript": "5.9.2"
+  }
+}
