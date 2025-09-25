@@ -2,7 +2,7 @@ import './Header.css';
 
 const Header = () => {
     return (
-        <header className="header">
+        <div className="header">
             <div className="header-container">
                 <div className="header-top">Territory Planning Tool (P4S) - Access APAC</div>
                 <div className="header-bottom">
@@ -22,7 +22,7 @@ const Header = () => {
                     <div className="header-time"></div>
                 </div>
             </div>
-        </header>
+        </div>
     );
 };
 

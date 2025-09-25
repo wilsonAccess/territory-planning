@@ -3,7 +3,7 @@ import { WidgetLoadProps } from '@workspace/utils';
 import { WidgetContainer } from '@workspace/utils-react';
 import React, { lazy, Suspense } from 'react';
 import { createRoot } from 'react-dom/client';
-import { BrowserRouter } from 'react-router-dom'; // ✅ Import BrowserRouter
+import { BrowserRouter } from 'react-router-dom';
 
 import { WidgetSettings } from './WidgetSettings';
 
