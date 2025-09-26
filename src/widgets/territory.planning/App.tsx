@@ -5,8 +5,8 @@ import { DeleteFilled, SearchFilled } from '@tag/tag-icons';
 import { SelectedMenuItem } from '@tag/tag-components-react-v4/dist/components/workspace/shared/menu/types';
 import { Root } from 'react-dom/client';
 import MainLayout from './layouts/MainLayout';
-import Dashboard from './pages/Dashboard';
-import AdminDashboard from './pages/AdminDashboard';
+import Dashboard from './pages/Dashboard/Dashboard';
+import AdminDashboard from './pages/AdminDashboard/AdminDashboard';
 import { Route, Routes } from 'react-router-dom';
 
 type AppProps = {
