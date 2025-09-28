@@ -10,7 +10,6 @@
     min-width: none;
     max-width: 200vh;
     float: right;
-    margin-left: 6px;
 }
 
 .filter-select {
@@ -31,6 +30,7 @@
     justify-content: flex-end;
     margin-bottom: 10px;
     justify-content: space-between; /* equal space between items */
+    gap: 4px;
 }
 
 .kpi-header {
