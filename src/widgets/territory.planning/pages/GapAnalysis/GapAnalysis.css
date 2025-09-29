@@ -1,0 +1,597 @@
+.admin-dashboard {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    min-height: 100vh; /* fills at least the viewport */
+    width: 100%;
+    box-sizing: border-box;
+    color: #2c3e50;
+
+    display: flex;
+    flex-direction: column;
+}
+/* AdminDashboard.css */
+
+.tpo-section {
+    background: #ffffff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 1px 4px rgba(0, 0, 0, 0.08);
+
+    border: 1px solid #eee;
+}
+
+/* Header Styles */
+
+.dashboard-header {
+    background: #f6f8ff;
+    border-radius: 7px;
+    padding: 5px;
+    margin-bottom: 25px;
+    box-shadow: 0 2px 2px rgba(0, 0, 0, 0.08);
+    border: 1px solid #e9ecef;
+    background-color: #d3dbf7;
+    border-left: 5px solid #064b8f;
+}
+
+.dashboard-title {
+    margin: 15px 15px 8px;
+    font-size: 19px;
+    font-weight: 600;
+    color: #064b8f;
+    line-height: 1.2;
+}
+
+.dashboard-subtitle {
+    margin: 0 15px 8px;
+    font-size: 16px;
+    font-weight: 400;
+    color: #033d70;
+}
+
+/* Section Titles */
+.section-title {
+    font-size: 21px;
+    font-weight: 640;
+    color: #000000;
+    margin: 0 0 20px 0;
+}
+
+/* KPI Section */
+.kpi-section {
+    margin-bottom: 30px;
+}
+
+.kpi-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 15px;
+}
+
+.kpi-card {
+    background: white;
+    border-radius: 8px;
+    padding: 14px;
+    box-shadow: 0 1px 4px rgba(0, 0, 0, 0.08);
+    border: 1px solid #e9ecef;
+    text-align: left;
+}
+
+.kpi-label {
+    font-size: 13px;
+    color: #6c757d;
+    font-weight: 500;
+}
+
+.kpi-value {
+    font-size: 26px;
+    font-weight: 700;
+    color: #131414;
+}
+
+/* Charts Row */
+.charts-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+    margin-bottom: 30px;
+}
+
+.chart-container {
+    background: rgb(255, 255, 255);
+    border-radius: 8px;
+    width: 100%;
+    align-items: left;
+    /* padding: 20px; */
+    /* box-shadow: 0 2px 10px rgba(0, 0, 0, 0.08);
+  border: 1px solid #e9ecef; */
+    box-sizing: border-box;
+}
+
+@media (max-width: 900px) {
+    .chart-container {
+        max-width: 100%;
+    }
+}
+
+@media (max-width: 480px) {
+    .chart-container {
+        padding: 10px;
+        max-width: 100%;
+    }
+}
+
+.chart-title {
+    margin: 0 0 15px 0;
+    font-size: 18px;
+    font-weight: 600;
+    color: #0b0b0b;
+}
+
+.chart-legend {
+    align-items: center;
+    display: flex;
+    gap: 20px;
+    margin-top: 15px;
+    font-size: 15px;
+    justify-content: center;
+}
+
+.legend-item {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    font-size: 15px;
+    color: #6c757d;
+}
+.kpi-description {
+    font-size: 15px;
+    color: black;
+}
+
+.legend-dot {
+    width: 12px;
+    height: 12px;
+    border-radius: 2px;
+}
+
+/* Pipeline Bars */
+.pipeline-bars {
+    margin-bottom: 15px;
+}
+
+.pipeline-bar-item {
+    margin-bottom: 12px;
+}
+
+.pipeline-label {
+    font-size: 12px;
+    color: #6c757d;
+    margin-bottom: 4px;
+}
+
+.pipeline-bar {
+    height: 20px;
+    background: #f8f9fa;
+    border-radius: 4px;
+    overflow: hidden;
+    position: relative;
+}
+
+.pipeline-fill {
+    height: 100%;
+    transition: width 0.3s ease;
+}
+
+.donut-legend {
+    display: flex;
+    justify-content: space-between;
+    font-size: 11px;
+    color: #6c757d;
+}
+
+.legend-label {
+    font-size: 11px;
+}
+
+/* Quarterly Section */
+.quarterly-section {
+    margin-bottom: 30px;
+    margin-left: 10px;
+}
+
+.quarterly-chartss {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 15px;
+    margin-bottom: 15px;
+}
+
+.quarter-chart {
+    background: white;
+    border-radius: 8px;
+    padding: 15px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.08);
+    border: 1px solid #e9ecef;
+}
+
+.quarterly-legend {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    margin-top: 15px;
+}
+
+/* Table Section */
+
+.table-section {
+    margin-bottom: 30px;
+}
+
+.table-wrapper {
+    background: white;
+    border-radius: 0px;
+    overflow: hidden;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.08);
+    border: 1px solid #e9ecef;
+}
+
+.territory-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 14px;
+}
+
+.territory-table tr.table-header {
+    background: #f8f9fa;
+    color: #9ca1a6;
+    font-family: 12px;
+    align-items: center;
+    font-weight: 600;
+}
+
+.territory-table thead tr td {
+    padding: 10px 10px;
+    border-bottom: 2px solid #dee2e6;
+    font-size: 12px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    font-weight: 650; /* ensures bold header */
+    color: #333; /* darker for visibility */
+}
+
+thead {
+    background: #f8f9fa;
+    color: #9ca1a6;
+}
+.territory-table tr.table-header td {
+    padding: 10px 10px;
+    border-bottom: 2px solid #dee2e6;
+    font-size: 12px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.territory-table tr.table-row {
+    transition: background-color 0.2s ease;
+}
+
+.territory-table tr.table-row:hover {
+    background-color: #f8f9fa;
+}
+
+.territory-table td {
+    padding: 15px;
+    border-bottom: 1px solid #dee2e6;
+}
+
+.territory-table td.positive {
+    color: #28a745;
+    font-weight: 600;
+}
+
+.territory-table td.negative {
+    color: #dc3545;
+    font-weight: 600;
+}
+
+/* Insights Section */
+.insights-section {
+    margin-bottom: 20px;
+}
+
+.insights-grid {
+    gap: 15px;
+}
+
+.insight-card {
+    padding: 5px;
+    border-radius: 8px;
+    transition: all 0.2s ease;
+    cursor: pointer;
+}
+
+.insight-content {
+    display: flex;
+    align-items: flex-start;
+    gap: 12px;
+    padding: 12px;
+    border-left: 5px solid #064b8f;
+}
+
+.insight-icon {
+    font-size: 18px;
+    flex-shrink: 0;
+}
+
+.insight-text {
+    flex: 1;
+}
+
+.insight-title {
+    margin: 0 0 6px 0;
+    font-size: 16.5px;
+    font-weight: 440;
+    color: #0a0a0a;
+}
+
+.insight-description {
+    margin-left: -30px;
+    font-size: 15.5px;
+    color: #2b2929;
+    line-height: 1.4;
+    font-weight: 496;
+}
+
+/* Responsive Design */
+@media (max-width: 1200px) {
+    .charts-row {
+        grid-template-columns: 1fr;
+    }
+
+    .quarterly-charts {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .kpi-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 768px) {
+    .admin-dashboard {
+        padding: 5px;
+    }
+
+    .kpi-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .quarterly-charts {
+        grid-template-columns: 1fr;
+    }
+
+    .quarterly-legend {
+        justify-content: flex-start;
+        gap: 15px;
+    }
+
+    .chart-legend {
+        flex-direction: column;
+        gap: 8px;
+    }
+
+    .insights-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 480px) {
+    .admin-dashboard {
+        padding: 10px;
+    }
+
+    .dashboard-header {
+        padding: 20px;
+    }
+
+    .dashboard-title {
+        font-size: 19px;
+    }
+
+    .kpi-card {
+        padding: 15px;
+    }
+
+    .kpi-value {
+        font-size: 25px;
+    }
+
+    .chart-container {
+        padding: 15px;
+    }
+
+    .quarter-chart {
+        padding: 10px;
+    }
+
+    .chart-container medium {
+        height: 250px;
+    }
+}
+
+.highlight-red {
+    color: #7b1f28;
+    background-color: #f5dadc;
+    padding: 5px;
+    border-radius: 12px;
+    font-size: 12px;
+    font-weight: 650;
+}
+
+.highlight-yellow {
+    color: #a8404a;
+    background-color: #f6f8b1;
+    padding: 6px;
+    font-weight: 650;
+    border-radius: 11px;
+    font-size: 11.5px;
+}
+
+.pipeline-chart {
+    width: 100%;
+}
+.sub-tab .tab {
+    font-weight: 500;
+    border-bottom: 2px solid transparent; /* Reserve space, no jump */
+    transition:
+        color 0.15s ease,
+        border-bottom-color 0.15s ease;
+}
+
+.sub-tab .tab:hover {
+    color: #2f2f30;
+    border-bottom-color: rgb(181, 179, 179); /* Change only the color */
+}
+
+.sub-tab .tab.active {
+    color: #6c63ff;
+    border-bottom-color: #6c63ff;
+}
+
+.insight-details {
+    padding: 10px 15px;
+    background: #fff;
+    border-top: 1px solid #ddd;
+    font-size: 14px;
+    color: #444;
+}
+.insight-details ul {
+    margin: 0;
+    padding-left: 20px;
+}
+.insight-card {
+    transition: all 0.2s ease;
+}
+
+.insight-details ul {
+    list-style-type: disc; /* circle, square, disc */
+    padding-left: 20px; /* spacing */
+}
+
+.insight-details li {
+    margin-bottom: 0px;
+    color: #333;
+    font-size: 14px;
+}
+
+.insight-details li::marker {
+    color: #545353; /* custom bullet color */
+    font-size: 1.2em; /* bigger bullet */
+}
+
+.add-strategy-form {
+    background: #f9f8f8;
+    width: 100%;
+    height: 190%;
+    padding: 10px;
+    border-radius: 10px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+    margin: 0 auto;
+}
+
+.add-strategy-form h3 {
+    margin-bottom: 20px;
+    font-size: 20px;
+    font-weight: 600;
+    color: #1f2937; /* Tailwind gray-800 */
+}
+
+.form-row {
+    background: #f9f8f8;
+    display: flex;
+    gap: 16px;
+    margin-bottom: 16px;
+    border: none;
+}
+
+label {
+    display: block;
+    margin-bottom: 6px;
+    font-weight: 600; /* consistent weight */
+    font-size: 15px; /* consistent size */
+    color: #7e7f80; /* Tailwind gray-700 */
+}
+::placeholder {
+    color: #9ca3af; /* Tailwind gray-400 */
+    opacity: 1; /* ensure visibility */
+    font-size: 14px;
+}
+
+.form-row label {
+    background: #f9f8f8; /* subtle background only for row labels */
+    padding: 2px 4px; /* small padding for readability */
+    border-radius: 4px; /* soft corners */
+}
+
+.form-control {
+    background: #f9f8f8;
+    border: none;
+    margin-bottom: 25px;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+.form-control input,
+.form-control select,
+.form-control textarea {
+    margin-top: 0px;
+    height: 25px;
+    border-radius: 5px;
+    font-size: 14px;
+    outline: none;
+    transition:
+        border-color 0.2s,
+        box-shadow 0.2s;
+}
+
+.form-control input:focus,
+.form-control select:focus,
+.form-control textarea:focus {
+    border-color: #2563eb; /* Tailwind blue-600 */
+    box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.15);
+}
+
+.form-actions {
+    display: flex;
+    justify-content: flex-end;
+    gap: 12px;
+    margin-top: 120px;
+}
+
+.btn {
+    border-radius: 6px;
+    font-size: 14px;
+    font-weight: 500;
+    border: none;
+    cursor: pointer;
+    transition: background 0.2s;
+}
+
+.btn-cancel {
+    background: #fefefe; /* Tailwind gray-100 */
+    color: #374151; /* gray-700 */
+    border: 1px solid #d1d5db; /* gray-300 */
+}
+
+.btn-cancel:hover {
+    background: #e5e7eb;
+}
+
+.btn-primary {
+    background: #059669; /* Tailwind emerald-600 */
+    color: #fff;
+}
+
+.btn-primary:hover {
+    background: #047857;
+}
