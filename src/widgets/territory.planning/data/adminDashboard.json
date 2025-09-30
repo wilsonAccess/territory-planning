@@ -1,0 +1,111 @@
+{
+    "pipelineData": [
+        { "name": "Run Rate 23%", "value": 23, "color": "#00bfae" },
+        { "name": "Cross-Sell 27%", "value": 27, "color": "#5c1a33" },
+        { "name": "Upsell 34%", "value": 30, "color": "#d32f2f" },
+        { "name": "New Business 17%", "value": 20, "color": "#80deea" }
+    ],
+    "kpiData": [
+        {
+            "label": "Total Annual Target",
+            "value": "$23,000,000",
+            "change": "+12%",
+            "description": "1 Sales Territories"
+        },
+        {
+            "label": "Total Pipeline",
+            "value": "$15,700,000",
+            "change": "+8%",
+            "description": "2.8x Average Coverage"
+        },
+        {
+            "label": "Average Attainment",
+            "value": "21.5%",
+            "change": "-3%",
+            "description": "YTD Performance"
+        },
+        {
+            "label": "Pipeline Gap",
+            "value": "$64,800,000",
+            "change": "+15%",
+            "description": "Additional Pipeline Needed"
+        }
+    ],
+    "performanceData": [
+        { "name": "John", "target": 8.2, "pipeline": 6.5, "attainment": 93.8 },
+        { "name": "Sarah", "target": 9.0, "pipeline": 4.5, "attainment": 111.1 },
+        { "name": "Michael", "target": 8.0, "pipeline": 5.5, "attainment": 106.2 }
+    ],
+    "quarterlyData": [
+        { "quarter": "Q1", "current": 75, "previous": 65, "budget": 20 },
+        { "quarter": "Q2", "current": 80, "previous": 70 },
+        { "quarter": "Q3", "current": 85, "previous": 75 },
+        { "quarter": "Q4", "current": 90, "previous": 80 }
+    ],
+    "territoryData": [
+        {
+            "salesRep": "John Smith",
+            "territory": "APAC - Singapore/Malaysia",
+            "devision": "ERP DST",
+            "annualTarget": "$14,000,000",
+            "pipeline": "$8,700,000",
+            "coverage": "2.5x",
+            "attainment": "23%",
+            "gapStatus": "Gap: $3,500,000"
+        },
+        {
+            "salesRep": "Sarah Johnson",
+            "territory": "EMEA - UK/France",
+            "devision": "CRM",
+            "annualTarget": "$12,000,000",
+            "pipeline": "$8,400,000",
+            "coverage": "2.8x",
+            "attainment": "40%",
+            "gapStatus": "Gap: $2,400,000"
+        },
+        {
+            "salesRep": "Michael Wong",
+            "territory": "APAC - Australia/NZ",
+            "devision": "HCM",
+            "annualTarget": "$9,000,000",
+            "pipeline": "$7,000,000",
+            "coverage": "3.1x",
+            "attainment": "20%",
+            "gapStatus": "Gap: $900,000"
+        }
+    ],
+    "insights": [
+        {
+            "type": "alert",
+            "icon": "CircleInfoLined",
+            "bgColor": "#FEF2F2",
+            "color": "#E95050",
+            "title": "Gap Alert",
+            "description": "3 of 3 territories have insufficient pipeline coverage. Total gap across all territories: $98,400,000."
+        },
+        {
+            "type": "warning",
+            "icon": "BarChart2Filled",
+            "color": "#FBC02D",
+            "bgColor": "#FEFCE8",
+            "title": "Pipeline Mix",
+            "description": "New business pipeline makes up only 17% of total pipeline. Consider increasing focus on new customer acquisition for long-term growth."
+        },
+        {
+            "type": "info",
+            "icon": "LineChartArrowLined",
+            "color": "#4CAF50",
+            "bgColor": "#d1eed2ff",
+            "title": "Top Performers",
+            "description": "1 territories are exceeding 30% attainment YTD. Review best practices from these reps to share across the organization."
+        },
+        {
+            "type": "success",
+            "icon": "UsersFilled",
+            "color": "#2196F3",
+            "bgColor": "#c4daecff",
+            "title": "Resource Allocation",
+            "description": "APAC region shows the highest pipeline coverage at 2.8x. Consider redistributing enablement resources to support underperforming regions."
+        }
+    ]
+}

@@ -1,4 +1,5 @@
-import React, { ReactElement } from 'react';
+/* eslint-disable @typescript-eslint/no-unused-vars */
+import React, { ReactElement, useEffect, useState } from 'react';
 import {
     BarChart,
     Bar,
@@ -10,14 +11,13 @@ import {
     Pie,
     Cell,
 } from 'recharts';
-import './AdminDashboard.css';
-import {
-    BarChart2Filled,
-    CircleInfoLined,
-    ExclamationMarkFilled,
-    LineChartArrowLined,
-    UsersFilled,
-} from '@tag/tag-icons';
+import './AdminDashboard.scss';
+import { BarChart2Filled, CircleInfoLined, LineChartArrowLined, UsersFilled } from '@tag/tag-icons';
+
+import adminDashboardData from '../../data/adminDashboard.json';
+import KpiCard from '../../components/kpiCard/KpiCard';
+import TPPieChart from '../../components/tpPieChart/TPPieChart';
+import TPBarChart from '../../components/tpBarChart/TPBarChart';
 import FilterDropdown from '../../components/FilterDropdown/FilterDropdown';
 
 interface KPIData {
@@ -27,12 +27,22 @@ interface KPIData {
     description?: string;
 }
 
+interface KpiItem {
+    label: string;
+    value: string | number;
+    description: string;
+}
+const kpiDataExample: KpiItem[] = [
+    { label: 'Revenue', value: '$12,000', description: 'Monthly revenue' },
+    { label: 'Users', value: '1,200', description: 'Active users' },
+    { label: 'Tickets', value: '320', description: 'Support tickets' },
+];
+
 interface PerformanceData {
     name: string;
-    value: number;
-    benchmark: number;
-    budget?: number;
-    attainment?: number;
+    target?: number;
+    pipeline?: number;
+    attainment: number;
 }
 
 interface QuarterlyData {
@@ -70,142 +80,41 @@ interface InsightData {
 }
 
 const AdminDashboard: React.FC = () => {
-    const kpiData: KPIData[] = [
-        {
-            label: 'Total Annual Target',
-            value: '$23,000,000',
-            change: '+12%',
-            description: '1 Sales Territories',
-        },
-        {
-            label: 'Total Pipeline',
-            value: '$15,700,000',
-            change: '+8%',
-            description: '2.8x Average Coverage',
-        },
-        {
-            label: 'Average Attainment',
-            value: '21.5%',
-            change: '-3%',
-            description: 'YTD Performance',
-        },
-        {
-            label: 'Pipeline Gap',
-            value: '$64,800,000',
-            change: '+15%',
-            description: 'Additional Pipeline Needed',
-        },
-    ];
+    const [kpiData, setKpiData] = useState<KPIData[]>([]);
+    const [performanceData, setPerformanceData] = useState<PerformanceData[]>([]);
+    const [quarterlyData, setQuarterlyData] = useState<QuarterlyData[]>([]);
+    const [pipelineData, setPipelineData] = useState<PipelineData[]>([]);
+    const [territoryData, setTerritoryData] = useState<TerritoryData[]>([]);
+    const [insights, setInsights] = useState<InsightData[]>([]);
 
-    const performanceData: PerformanceData[] = [
-        {
-            name: 'John',
-            value: 8.0, // $8M
-            benchmark: 6.5, // $6.5M
-            budget: 7.5, // $7.5M
-            attainment: +((8.0 / 7.5) * 100).toFixed(1), // 106.7%
-        },
-        {
-            name: 'Sarah',
-            value: 9.0, // $9M
-            benchmark: 4.5, // $4.5M
-            budget: 10.0, // $10M
-            attainment: +((9.0 / 10.0) * 100).toFixed(1), // 90.0%
-        },
-        {
-            name: 'Michael',
-            value: 8.0, // $8M
-            benchmark: 5.5, // $5.5M
-            budget: 8.5, // $8.5M
-            attainment: +((8.0 / 8.5) * 100).toFixed(1), // 94.1%
-        },
-    ];
+    useEffect(() => {
+        if (adminDashboardData) {
+            setKpiData(adminDashboardData.kpiData);
+            // Compute attainment here
+            const perf = adminDashboardData.performanceData.map((p: any) => ({
+                ...p,
+                // attainment: p.budget ? +((p.value / p.budget) * 100).toFixed(1) : 0,
+            }));
+            setPerformanceData(perf);
+            setQuarterlyData(adminDashboardData.quarterlyData);
+            setPipelineData(adminDashboardData.pipelineData);
+            setTerritoryData(adminDashboardData.territoryData);
 
-    const quarterlyData: QuarterlyData[] = [
-        { quarter: 'Q1', current: 75, previous: 65, budget: 20 },
-        { quarter: 'Q2', current: 80, previous: 70 },
-        { quarter: 'Q3', current: 85, previous: 75 },
-        { quarter: 'Q4', current: 90, previous: 80 },
-    ];
-
-    const pipelineData: PipelineData[] = [
-        { name: 'Run Rate 23%', value: 23, color: '#00bfae' },
-        { name: 'Cross-Sell 27%', value: 27, color: '#5c1a33' },
-        { name: 'Upsell 34%', value: 30, color: '#d32f2f' },
-        { name: 'New Business 17%', value: 20, color: '#80deea' },
-    ];
-
-    const territoryData: TerritoryData[] = [
-        {
-            salesRep: 'John Smith',
-            territory: 'APAC - Singapore/Malaysia',
-            devision: 'ERP DST',
-            annualTarget: '$14,000,000	',
-            pipeline: '$8,700,000',
-            coverage: '2.5x',
-            attainment: '23%',
-            gapStatus: 'Gap: $3,500,000',
-        },
-        {
-            salesRep: 'Sarah Johnson',
-            territory: 'EMEA - UK/France',
-            devision: 'CRM',
-            annualTarget: '$12,000,000',
-            pipeline: '$8,400,000',
-            coverage: '2.8x',
-            attainment: '40%',
-            gapStatus: 'Gap: $2,400,000',
-        },
-        {
-            salesRep: 'Michael Wong',
-            territory: 'APAC - Australia/NZ',
-            devision: 'HCM',
-            annualTarget: '$9,000,000',
-            pipeline: '$7,000,000',
-            coverage: '3.1x',
-            attainment: '20%',
-            gapStatus: 'Gap: $900,000',
-        },
-    ];
-
-    const insights: InsightData[] = [
-        {
-            type: 'alert',
-            icon: <CircleInfoLined accent="teal" />,
-            bgColor: '#FEF2F2',
-            color: '#E95050',
-            title: 'Gap Alert',
-            description:
-                '3 of 3 territories have insufficient pipeline coverage. Total gap across all territories: $98,400,000.',
-        },
-        {
-            type: 'warning',
-            icon: <BarChart2Filled accent="purple" />,
-            color: '#FBC02D',
-            bgColor: '#FEFCE8',
-            title: 'Pipeline Mix',
-            description:
-                'New business pipeline makes up only 17% of total pipeline. Consider increasing focus on new customer acquisition for long-term growth.',
-        },
-        {
-            type: 'info',
-            icon: <LineChartArrowLined accent="green" />,
-            color: '#4CAF50',
-            bgColor: '#d1eed2ff',
-            title: 'Top Performers',
-            description:
-                '1 territories are exceeding 30% attainment YTD. Review best practices from these reps to share across the organization.',
-        },
-        {
-            type: 'success',
-            icon: <UsersFilled accent="blue" />,
-            color: '#2196F3',
-            bgColor: '#c4daecff ',
-            title: 'Resource Allocation',
-            description:
-                'APAC region shows the highest pipeline coverage at 2.8x. Consider redistributing enablement resources to support underperforming regions.',
-        },
-    ];
+            // Map icons from string → ReactElement
+            const iconMap: Record<string, ReactElement> = {
+                CircleInfoLined: <CircleInfoLined accent="teal" />,
+                BarChart2Filled: <BarChart2Filled accent="purple" />,
+                LineChartArrowLined: <LineChartArrowLined accent="green" />,
+                UsersFilled: <UsersFilled accent="blue" />,
+            };
+            setInsights(
+                adminDashboardData.insights.map((insight: any) => ({
+                    ...insight,
+                    icon: iconMap[insight.icon] || <CircleInfoLined />,
+                })),
+            );
+        }
+    }, []);
 
     return (
         <div className="admin-dashboard">
@@ -236,15 +145,7 @@ const AdminDashboard: React.FC = () => {
                             />
                         </div>
                     </div>
-                    <div className="kpi-grid">
-                        {kpiData.map((kpi, index) => (
-                            <div key={index} className="kpi-card">
-                                <div className="kpi-label">{kpi.label}</div>
-                                <div className="kpi-value">{kpi.value}</div>
-                                <div className="kpi-description">{kpi.description}</div>
-                            </div>
-                        ))}
-                    </div>
+                    <KpiCard kpiData={kpiDataExample} />
                 </div>
 
                 {/* Charts Section - Top Row */}
@@ -252,110 +153,13 @@ const AdminDashboard: React.FC = () => {
                     {/* Performance Comparison */}
                     <div className="chart-container ">
                         <h3 className="chart-title">Rep Performance Comparison</h3>
-                        <ResponsiveContainer width="100%" height={350}>
-                            <BarChart data={performanceData} barCategoryGap="8%">
-                                <CartesianGrid strokeDasharray="3 3" stroke="rgba(0,0,0,0.1)" />
-
-                                {/* X Axis */}
-                                <XAxis dataKey="name" stroke="#666" fontSize={12} />
-
-                                {/* Left Y Axis - Amount ($M) */}
-                                <YAxis
-                                    yAxisId="left"
-                                    orientation="left"
-                                    stroke="#666"
-                                    fontSize={12}
-                                    domain={[0, 16]}
-                                    ticks={[0, 4, 8, 12, 16]}
-                                    label={{
-                                        value: 'Amount ($M)',
-                                        angle: -90,
-                                        position: 'insideLeft',
-                                    }}
-                                />
-
-                                {/* Right Y Axis - Attainment (%) */}
-                                <YAxis
-                                    yAxisId="right"
-                                    orientation="right"
-                                    stroke="#666"
-                                    fontSize={12}
-                                    domain={[0, 40]}
-                                    ticks={[0, 10, 20, 30, 40]}
-                                    label={{
-                                        value: 'Attainment (%)',
-                                        angle: 90,
-                                        position: 'insideRight',
-                                    }}
-                                />
-
-                                {/* Bars */}
-                                <Bar
-                                    dataKey="value"
-                                    yAxisId="left"
-                                    fill="#00bfae"
-                                    radius={[2, 2, 0, 0]}
-                                />
-                                <Bar
-                                    dataKey="benchmark"
-                                    yAxisId="left"
-                                    fill="#5c1a33"
-                                    radius={[2, 2, 0, 0]}
-                                />
-                                <Bar
-                                    dataKey="budget"
-                                    yAxisId="left"
-                                    fill="#d32f2f"
-                                    radius={[2, 2, 0, 0]}
-                                />
-                                {/* Remove Attainment bar if not present in data */}
-                            </BarChart>
-                        </ResponsiveContainer>
-                        <div className="chart-legend">
-                            <span className="legend-item">
-                                <span
-                                    className="legend-dot"
-                                    style={{ backgroundColor: '#17a2b8' }}
-                                ></span>
-                                <span style={{ color: '#17a2b8' }}>Target</span>
-                            </span>
-                            <span className="legend-item">
-                                <span
-                                    className="legend-dot"
-                                    style={{ backgroundColor: '#6f42c1' }}
-                                ></span>
-                                <span style={{ color: '#6f42c1' }}>Pipeline</span>
-                            </span>
-                            <span className="legend-item">
-                                <span
-                                    className="legend-dot"
-                                    style={{ backgroundColor: '#dc3545' }}
-                                ></span>
-                                <span style={{ color: '#dc3545' }}>Attainment %</span>
-                            </span>
-                        </div>
+                        <TPBarChart data={performanceData} />
                     </div>
 
                     {/* Pipeline Composition as Pie Chart */}
                     <div className="chart-container ">
                         <h3 className="chart-title">Pipeline Composition</h3>
-                        <ResponsiveContainer width="100%" height={280}>
-                            <PieChart>
-                                <Pie
-                                    data={pipelineData}
-                                    dataKey="value"
-                                    nameKey="name"
-                                    cx="50%"
-                                    cy="50%"
-                                    outerRadius={100}
-                                    label={({ name }) => name}
-                                >
-                                    {pipelineData.map((entry, index) => (
-                                        <Cell key={`cell-${index}`} fill={entry.color} />
-                                    ))}
-                                </Pie>
-                            </PieChart>
-                        </ResponsiveContainer>
+                        <TPPieChart data={pipelineData} />
                     </div>
                 </div>
 

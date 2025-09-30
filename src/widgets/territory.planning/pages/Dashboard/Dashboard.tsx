@@ -1,8 +1,9 @@
 import React, { ReactElement } from 'react';
 import { TertiaryButton } from '@tag/tag-components-react-v4';
-import FilterDropdown from '../../components/FilterDropdown/FilterDropdown';
 import './Dashboard.css';
+import PipelineCardSection from '../../components/PipelineCardSection';
 import { BarChart2Filled, CircleInfoLined, TickFilled } from '@tag/tag-icons';
+import FilterDropdown from '../../components/FilterDropdown/FilterDropdown';
 
 interface QData {
     title: string;
@@ -132,56 +133,8 @@ const Dashboard = () => {
                 </div>
             </div>
             <div className="dashboard-pipeline-card-container">
-                <div className="dashboard-pipeline-card">
-                    <div className="dashboard-pipeline-card-title">Pipeline by Product</div>
-                    <div className="dashboard-pipeline-card-content">
-                        {productPipeline.map((product, index) => (
-                            <div key={index} className="dashboard-pipeline-card-row">
-                                <div className="dashboard-pipeline-card-item">
-                                    <div className="dashboard-pipeline-card-item-left">
-                                        <div
-                                            className="dashboard-pipeline-card-item-color"
-                                            style={{ backgroundColor: product.color }}
-                                        ></div>
-                                        <div className="dashboard-pipeline-card-item-name">
-                                            {product.name}
-                                        </div>
-                                    </div>
-                                    <div className="dashboard-pipeline-card-item-right">
-                                        <div className="dashboard-pipeline-card-item-value">
-                                            {product.value}
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        ))}
-                    </div>
-                </div>
-                <div className="dashboard-pipeline-card">
-                    <div className="dashboard-pipeline-card-title">Pipeline by Company Type</div>
-                    <div className="dashboard-pipeline-card-content">
-                        {companyTypePipeline.map((product, index) => (
-                            <div key={index} className="dashboard-pipeline-card-row">
-                                <div className="dashboard-pipeline-card-item">
-                                    <div className="dashboard-pipeline-card-item-left">
-                                        <div
-                                            className="dashboard-pipeline-card-item-color"
-                                            style={{ backgroundColor: product.color }}
-                                        ></div>
-                                        <div className="dashboard-pipeline-card-item-name">
-                                            {product.name}
-                                        </div>
-                                    </div>
-                                    <div className="dashboard-pipeline-card-item-right">
-                                        <div className="dashboard-pipeline-card-item-value">
-                                            {product.value}
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        ))}
-                    </div>
-                </div>
+                <PipelineCardSection title="Pipeline by Product" data={productPipeline} />
+                <PipelineCardSection title="Pipeline by Company Type" data={companyTypePipeline} />
             </div>
             <div className="dashboard-insights-section">
                 <h3 className="section-title">Key Actions Required</h3>

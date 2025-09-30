@@ -2,6 +2,19 @@
 import React, { ReactElement, useState } from 'react';
 import './QuotaPipeline.css';
 import Navbar from '../../layouts/navbar/Navbar';
+
+import {
+    BarChart,
+    Bar,
+    XAxis,
+    YAxis,
+    CartesianGrid,
+    ResponsiveContainer,
+    PieChart,
+    Pie,
+    Cell,
+} from 'recharts';
+
 import {
     BarChart2Filled,
     ChevronDownLined,
@@ -11,6 +24,8 @@ import {
     LineChartArrowLined,
     UsersFilled,
 } from '@tag/tag-icons';
+
+import AddButton from '../../components/addButton/AddButton';
 
 interface CardData {
     title: string;
@@ -67,16 +82,19 @@ const QuotaPipeline: React.FC = () => {
                         }
                     />
                 </div>
+                {activePage === 'quota' && <></>}
+                {activePage === 'pipeline' && <></>}
+                {activePage === 'quarter' && <></>}
             </div>
             {/* KPI Cards */}
             <div className="quota-card-section">
-                <div className="kpi-grid">
+                <div className="quota-grid">
                     {cardData.map((card, index) => (
                         <div key={index} className="quota-card">
-                            <div className="kpi-label">{card.title}</div>
-                            <div className="kpi-value">{card.value}</div>
+                            <div className="quota-title">{card.title}</div>
+                            <div className="quota-value">{card.value}</div>
                             <div className="quota-subtitle">{card.subtitle}</div>
-                            <div className="kpi-description">{card.description}</div>
+                            <div className="quota-description">{card.description}</div>
                         </div>
                     ))}
                 </div>

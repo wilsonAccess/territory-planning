@@ -1,0 +1,67 @@
+{
+    "kpiData": [
+        { "label": "Annual Target", "value": "$14,000,000", "description": "FY2025 Goal" },
+        { "label": "Current Pipeline", "value": "$8,700,000", "description": "2.5x coverage" },
+        { "label": "Pipeline Gap", "value": "21.5%", "description": "Additional pipeline needed" }
+    ],
+    "territoryData": [
+        {
+            "type": "Expansion",
+            "strategy": "Cross-sell",
+            "description": "Upselling CRM licenses to existing clients",
+            "pipelineTarget": "$1,200,000",
+            "ratio": "2.5x"
+        },
+        {
+            "type": "Acquisition",
+            "strategy": "New logos",
+            "description": "Targeting healthcare sector in APAC",
+            "pipelineTarget": "$900,000",
+            "ratio": "3.0x"
+        }
+    ],
+    "insights": [
+        {
+            "type": "alert",
+            "icon": "CircleInfoLined",
+            "bgColor": "#FEF2F2",
+            "color": "#932f2fff",
+            "title": "Pipeline Gap Alert",
+            "description": "You need to generate $3,500,000 additional pipeline.",
+            "details": "Focus on EC/NP opportunities (30% conversion) and expand existing customer relationships for higher probability deals. Historical data shows that increasing account review frequency by 50% leads to 30% more expansion opportunities.",
+            "recommendations": [
+                "Schedule account reviews with your top 10 customers",
+                "Prepare expansion proposals for accounts with >80% utilization",
+                "Engage partners to identify cross-sell opportunities"
+            ]
+        },
+        {
+            "type": "warning",
+            "icon": "BarChart2Filled",
+            "color": "#2e8531ff",
+            "bgColor": "#d1eed2ff",
+            "title": "Optimize Pipeline Mix",
+            "description": "Current NC/NP pipeline is $1,200,000 with only 12% conversion rate."
+        },
+        {
+            "type": "info",
+            "icon": "LineChartArrowLined",
+            "color": "#1969aaff",
+            "bgColor": "#c4daecff",
+            "title": "Run Rate Expansion",
+            "description": "Run rate business at $1,800,000 provides stable base."
+        },
+        {
+            "type": "success",
+            "icon": "UsersFilled",
+            "color": "#daa82aff",
+            "bgColor": "#FEFCE8",
+            "title": "Q1 Focus Areas",
+            "description": "Your Q1 target requires immediate action to ensure pipeline coverage."
+        }
+    ],
+    "navItems": [
+        { "label": "Gap Closing Strategies", "path": "territory" },
+        { "label": "AI Insights & Recommendations", "path": "insights" }
+    ]
+}
