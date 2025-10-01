@@ -5,6 +5,21 @@
         { "name": "Upsell 34%", "value": 30, "color": "#d32f2f" },
         { "name": "New Business 17%", "value": 20, "color": "#80deea" }
     ],
+
+    "quarterlyPipelineData": [
+        { "name": "Q1", "runRate": "$450,000", "crossSell": "$750,000", "upsell": "$800,000", "newBusiness": "$300,000", "total": "$2,200,000"},
+        { "name": "Q2", "runRate": "$450,000", "crossSell": "$625,000", "upsell": "$960,000", "newBusiness": "$240,000", "total": "$2,400,000" },
+        { "name": "Q3", "runRate": "$450,000", "crossSell": "$500,000", "upsell": "$800,000", "newBusiness": "$360,000", "total": "$2,100,000" },
+        { "name": "Q4", "runRate": "$450,000", "crossSell": "$625,000", "upsell": "$640,000", "newBusiness": "$360,000", "total": "$2,000,000" }
+    ],
+
+    "quarterlyGapAnalysis": [
+        { "quarter": "Q1", "target": "$3,750,000", "currentPipeline": "$2,200,000", "coverage": "0.6x", "gap": "$10,925,000" },
+        { "quarter": "Q2", "target": "$3,750,000", "currentPipeline": "$2,400,000", "coverage": "0.6x", "gap": "$10,725,000" },
+        { "quarter": "Q3", "target": "$3,750,000", "currentPipeline": "$2,100,000", "coverage": "0.6x", "gap": "$11,025,000" },
+        { "quarter": "Q4", "target": "$3,750,000", "currentPipeline": "$2,000,000", "coverage": "0.5x", "gap": "$11,125,000" }
+    ],
+
     "kpiData": [
         {
             "label": "Total Annual Target",
